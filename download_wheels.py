@@ -132,6 +132,7 @@ def download_package_with_deps(package_spec, download_dir, package_progress_str)
     var_platforms = ['any', TARGET_PLATFORM_ALT]
 
     var_python_versions=['3.13','3.12','3.11','3','3.14','3.15','3.16'] # Target Python versions
+    #var_python_versions=['3.13'] # Target Python versions
 
     var_implementations = ['cp', 'py']
     var_binary_types = ['--only-binary=:all:'] # Force binary downloads
@@ -338,7 +339,7 @@ def main():
         with open("installation-instructions.bat", "w") as f:
             f.write(f"@echo off\n")
             f.write(f"REM Auto-generated batch file for offline installation\n")
-            f.write(f"REM Base wheel directory: {os.path.abspath(download_dir)}\n")
+            # f.write(f"REM Base wheel directory: {os.path.abspath(download_dir)}\n")
             f.write(f"echo.\n")
             f.write(f"REM --- Optional: Create and activate a virtual environment --- \n")
             f.write(f"REM python -m venv my_offline_env\n")
